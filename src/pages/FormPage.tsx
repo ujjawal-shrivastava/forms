@@ -36,8 +36,8 @@ type Components= {
 
 export default function FormPage() {
 
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
+    let loading = false;
+    let error = "";
     //const [data, setData] = useState();
     //const [response, setResponse] = useState({});
     
