@@ -44,7 +44,7 @@ export default function FormPage() {
     if (loading) return (<Loader />)
     if (error) return (<h1>Form Not Found!</h1>)
     document.body.style.backgroundColor = data.bgtheme;
-    document.title = data.title + " | Forms";
+    document.title = data.title + " - Forms";
     return (
         <div>
             <PageWrap>
