@@ -1,0 +1,119 @@
+{
+    "formid":"aw69h6",
+    "title":"Test College Form",
+    "description":"A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument. 🤟",
+    "author":"Ujjawal Shrivastava",
+    "bgtheme":"#f9ca24",
+    "isOpen":true,
+    "error":"",
+
+    "sections":
+    [
+        {
+            "title":"First Section",
+            "components":
+            [
+                {
+                    "type":"text",
+                    "title":"Name",
+                    "isReq":true,
+                    "properties":{
+                        "placeholder":"Full Name"     
+                    }
+                },
+                {
+                    "type":"text",
+                    "title":"Email",
+                    "isReq":true,
+                    "properties":{
+                        "placeholder":"Email"     
+                    }
+                },
+                {
+                    "type":"checkbox",
+                    "title":"What do you like?",
+                    "isReq":true,
+                    "properties":{
+                        "options":[
+                            {
+                                "title":"Playing"
+                            },
+                            {
+                                "title":"Dancing"
+                            },
+                            {
+                                "title":"Sleeping"                           
+                            },
+                            {
+                                "title":"Eating"
+                            }
+                            
+                        ]    
+                    }
+                }
+            ]
+        },
+        {
+            "title":"Second Section",
+            "components":
+            [
+                {
+                    "type":"radio",
+                    "title":"What's your gender?",
+                    "isReq":true,
+                    "properties":{
+                        "options":[
+                            {
+                                "title":"Male"
+                            },
+                            {
+                                "title":"Female"
+                            },
+                            {
+                                "title":"Other"                           
+                            },
+                            {
+                                "title":"Dont wanna tell"
+                            }
+                            
+                        ]    
+                    }
+                },
+                {
+                    "type":"textarea",
+                    "title":"Message",
+                    "isReq":false,
+                    "properties":{
+                        "placeholder":"Your Message"     
+                    }
+                },
+                {
+                    "type":"select",
+                    "title":"Course",
+                    "isReq":true,
+                    "properties":{
+                        "options":[
+                            {
+                                "title":"Computer Science",
+                                "value":"Computer Science"
+                            },
+                            {
+                                "title":"Maths",
+                                "value":"Maths"
+                            },
+                            {
+                                "title":"Hindi",
+                                "value":"English"                           
+                            },
+                            {
+                                "title":"English", 
+                                "value":"English"                          
+                            }
+                        ]      
+                    }
+                }
+            ]
+        }
+    ]
+
+}
