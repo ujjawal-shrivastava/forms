@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Footer from '../components/Footer';
 import PageWrap from '../components/PageWrap';
 import Loader from '../components/Loader';
