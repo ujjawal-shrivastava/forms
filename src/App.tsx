@@ -36,11 +36,11 @@ function App() {
             <Route component={FormPage} path="/:id([a-zA-Z0-9]{6})" exact />
             <Route component={AboutPage} path="/about" exact />
             <Route path="/login" exact render={() => {
-              window.location.href = "https://app.deform.ujjawal.co/login"
+              window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}login`
               return null
             }} />
             <Route path="/register" exact render={() => {
-              window.location.href = "https://app.deform.ujjawal.co/register"
+              window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}register`
               return null
             }} />
             <Route path="/" exact component={HomePage} />
