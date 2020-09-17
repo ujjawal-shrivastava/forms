@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import ResponseContext from '../../ResponseContext'
 
-
-
-type SelectComponentProps = {
-    sectionid: number,
+type LongComponentProps = {
+    sectionid:number,
     id: number,
     title: string,
     isReq: boolean,
@@ -12,13 +10,17 @@ type SelectComponentProps = {
     properties: any
 }
 
-export default class SelectComponent extends Component<SelectComponentProps> {
+export default class LongComponent extends Component<LongComponentProps> {
     handleValue = (value: string) => {
         let context = { ...this.context }
         context.responses[this.props.sectionid].responses[this.props.id].value = value
-        if (this.props.isReq && (value === "" || value === null)) {
+        if(this.props.isReq && (value==="" || value===null)){
             context.responses[this.props.sectionid].responses[this.props.id].error = "This is a required field!"
-        }else{
+        }
+        else if(value.length < this.props.properties.min){
+            context.responses[this.props.sectionid].responses[this.props.id].error = `Please fill at least ${this.props.properties.min} characters!`
+        }
+        else{
             context.responses[this.props.sectionid].responses[this.props.id].error = ""
         }
         this.context.setResponses(context.responses)
@@ -28,20 +30,12 @@ export default class SelectComponent extends Component<SelectComponentProps> {
         return (
             <div className="field my-4">
                 <label className="label">{this.props.title}&nbsp;<span className="has-text-danger">{this.props.isReq ? "*" : ""}</span></label>
-                <div className="select">
-                    <select defaultValue={this.context.responses[this.props.sectionid].responses[this.props.id].value} required={this.props.isReq}  name={this.props.value} id={this.props.value} onChange={(e) => this.handleValue(e.target.value)}>
-                    <option disabled={this.props.isReq} value=""> Select an option </option>
-                    {this.props.properties.options.map((value: any, index: number) => {
-                    return(
-                    <option key={index} value={value.value}>{value.title}</option>
-                        )
-                })}
-                    </select>
+                <div className="control ">
+                    <textarea maxLength={this.props.properties.max} required={this.props.isReq} className={`textarea ${this.context.responses[this.props.sectionid].responses[this.props.id].error? "is-danger" : ""}`}  placeholder={this.props.properties.placeholder || this.props.title} defaultValue={this.props.properties.defaultValue || ""} onChange={(e) => this.handleValue(e.target.value)} />
                 </div>
                 <p className="help is-danger">{this.context.responses[this.props.sectionid].responses[this.props.id].error}</p>
             </div>
         )
     }
 }
-
-SelectComponent.contextType = ResponseContext;
+LongComponent.contextType = ResponseContext;
