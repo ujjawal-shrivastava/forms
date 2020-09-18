@@ -95,7 +95,6 @@ export default function FormPage(props: any) {
     document.title = data.form.title + " - DeForm";
 
     const newResponse = () => {
-        reset()
         window.location.href = `${window.location.pathname}`
     }
 
@@ -155,8 +154,9 @@ export default function FormPage(props: any) {
                 }
             }
             submitForm({variables:{formid:data.form.formid, data:JSON.stringify(finalRes)}}).then((submitData)=>{
-                console.log(submitData.data.addResponse)  
                 setSubmitted(true)
+                reset()
+                setResponse({ ...initialResponse, setResponses: setResponses })
             })
             
         }
