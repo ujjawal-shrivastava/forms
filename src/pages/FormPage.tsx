@@ -138,7 +138,8 @@ export default function FormPage(props: any) {
 
     const submit = (e: any) => {
         e.preventDefault()
-        if (!checkErrors()) {
+        if(submitted) return
+        else if (!checkErrors()) {
             setFormError("Please resolve all the input errors!")
             return
         }
