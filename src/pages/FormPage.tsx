@@ -95,6 +95,7 @@ export default function FormPage(props: any) {
     document.title = data.form.title + " - DeForm";
 
     const newResponse = () => {
+        reset()
         window.location.href = `${window.location.pathname}`
     }
 
