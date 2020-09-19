@@ -7,7 +7,7 @@ export default function Footer(){
         <div className="content has-text-centered">
           <p>
             <span className="footer-span is-size-7 has-text-weight-light">This content is neither created nor endorsed by the&nbsp;
-              <u><a className="is-link footer-span " href="https://linkedin.com/in/ujjawalshrivastava/" target="_blank" rel="noopener noreferrer">Developer</a></u>.</span>
+              <u><a className="is-link footer-span " href="mailto: deform.website@gmail.com" target="_blank" rel="noopener noreferrer">Developer</a></u>.</span>
             <br />
             <strong className="is-size-4 logo-font">DeForm</strong>
           </p>
